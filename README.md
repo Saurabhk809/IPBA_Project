@@ -1,8 +1,11 @@
 # IPBA_Project
-Sample program for IPBA Project 
-All Python files checked in for Sample practice from IPBA program on 
+All program commits for IPBA Project 
+All Python files checked in from IPBA program on 
 Linear regression 
-Multiple Linear regression 
+Logistic Regression 
 Timeseries 
-ML 
+Clustering K Means 
+Text Mining 
+ML - Decision Trees, Random Forest , XGBoost, Gradient Boosting 
+NLP
 
