@@ -20,8 +20,8 @@ pd.set_option('display.float_format',lambda x:'%.4f' %x)
 
 os.chdir('C:\ProgramData\Anaconda3\Scripts\IPBA_Project')
 
-train_data=pd.read_csv('train.csv',na_values=[' ','NA','NULL'])
-test_data=pd.read_csv('test.csv',na_values=[' ','NA','NULL'])
+train_data=pd.read_csv('train_hp.csv',na_values=[' ','NA','NULL'])
+test_data=pd.read_csv('test_hp.csv',na_values=[' ','NA','NULL'])
 
 #set the display options
 pd.set_option('display.max_columns', 1000, 'display.width', 1000, 'display.max_rows',1000)
@@ -97,6 +97,12 @@ F_train,F_test,Y_train,Y_test=model_selection.train_test_split(FSet,Y,test_size=
 # Call the model
 model=mymodel(Y_train,F_train)
 prediction=Prediction(model,F_test,Y_test)
+print(model.fittedvalues)
+residuals=model.resid
+#sm.qqplot(model.resid,line ='45')
+sm.qqplot(model.resid)
+plt.title('qqplot for residuals')
+plt.show()
 
 # Plot test vs predicted
 cons_result=pd.DataFrame()
