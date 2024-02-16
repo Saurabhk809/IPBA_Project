@@ -27,10 +27,6 @@ for cols in Data.columns:
 sv_report = sv.analyze(Data)
 sv_report.show_html('sv_latency_report.html')
 
-# Data Preparation for EDA
-Lat_Data=Data[['Outbound P10','Outbound APLIB','Outbound AP','Total Outbound','Inbound AP','Inbound APLIB','Inbound P10','Total Inbound']]
-Out_Data=Data[['Outbound P10','Outbound APLIB','Outbound AP','Total Outbound']]
-In_Data=Data[['Inbound AP','Inbound APLIB','Inbound P10','Total Inbound']]
 
 # Latency Description
 Result=pd.DataFrame()
@@ -62,7 +58,6 @@ Result.to_csv('Result.csv',sep=',', encoding='utf-8', header='true')
 
 palette={'green','plum','orange','purple'}
 sbrn.displot(data=Out_Data,rug=True,bins=50)
-#sbrn.displot(data=Data[['Outbound P10','Outbound APLIB','Outbound AP','Total Outbound']],rug=True,bins=50)
 plt.title('Displot of outbound Latency')
 plt.tight_layout(pad=3.0)
 plt.savefig('outbound Latency.webp')
@@ -71,7 +66,6 @@ plt.xlabel('Latency')
 plt.show()
 
 sbrn.displot(data=In_Data,rug=True,bins=50)
-#sbrn.displot(data=Data[['Inbound P10','Inbound APLIB','Inbound AP','Total Inbound']],bins=50,palette=palette,rug=True)
 plt.title('Displot of Inbound Latency')
 plt.tight_layout(pad=3.0)
 plt.savefig('Inbound Latency.webp')
