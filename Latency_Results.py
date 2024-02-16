@@ -62,9 +62,6 @@ def main():
     clean_data(Data)
     encode_data(Data)
     #Lat_Data, Out_Data, In_Data=prep_Analyse_data(Data)
-    Lat_Data = Data[['Outbound P10', 'Outbound APLIB', 'Outbound AP', 'Total Outbound', 'Inbound AP', 'Inbound APLIB', 'Inbound P10', 'Total Inbound']]
-    Out_Data = Data[['Outbound P10', 'Outbound APLIB', 'Outbound AP', 'Total Outbound']]
-    In_Data = Data[['Inbound AP', 'Inbound APLIB', 'Inbound P10', 'Total Inbound']]
     print(type(Out_Data),Out_Data)
     sbrn.displot(data=Out_Data, rug=True, bins=50)
     plt.title('Displot of outbound Latency')
